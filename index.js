@@ -42,18 +42,6 @@ app.use('/', viewsRouter);
 
 socketServer.on('connection', socket => {
     console.log("Nuevo cliente conectado al servidor!!");
-
-    /* socket.on("mensajeKey", data => {
-        console.log(data);
-    })
-
-    socket.emit('msg_02', "Mensaje desde el back!!")
-
-    socket.broadcast.emit("evento_para_todos_excepto_socket_actual", "Este evento es para todos los sockets, menos el socket desde que se emitió el mensaje!")
-
-
-    socketServer.emit("evento_para_todos", "Evento para todos los Sockets!"); */
-
 }); 
 
 export default socketServer;

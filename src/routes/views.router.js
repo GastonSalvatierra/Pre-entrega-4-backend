@@ -6,6 +6,7 @@ const carrito= [];
 
 
 
+//peticiones http comunes
 
 router.get('/', (req,res)=>{
         res.render('home', {products: carrito});
@@ -29,18 +30,12 @@ router.post('/', (req,res)=>{
 
     res.send({ status: "success", message: "Producto AGREGADO con éxito" })
 
-
 });
 
 
 
 
-
-
-
-
-
-
+//peticiones con websockets
 
 router.get('/realtimeproducts', (req,res)=>{
 
@@ -74,8 +69,5 @@ router.post('/realtimeproducts', (req,res)=>{
 
 
 
-
-
 export default router;
 
-//este archivo contiene todas las peticiones que se hace a las rutas mencionadas y tambien logica js, a diferencia del app que maneja solola configuracion del entorno 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cliente de Socket.IO</title>
+</head>
+<body>
+  <!-- Tu contenido HTML aquí -->
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    // Enviar un mensaje al servidor cuando el formulario se envía
+    document.getElementById('miFormulario').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const mensaje = formData.get('mensaje');
+      socket.emit('mensaje', mensaje); // Envia el mensaje al servidor
+    });
+
+    // Escuchar la respuesta del servidor
+    socket.on('respuesta', (data) => {
+      console.log('Respuesta del servidor:', data);
+    });
+  </script>
+</body>
+</html>
